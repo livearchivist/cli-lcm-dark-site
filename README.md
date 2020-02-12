@@ -4,6 +4,8 @@ CLI only way to enable Dark Site mode for LCM and update MSP and Objects Control
 
 Let me know if you have any questions!
 
+> WARNING! A LOT of these API calls are not released for public consumption yet. This is not for production use cases!
+
 ## Enable Dark Site Mode and Update MSP and Objects
 
 1. Download the LCM Dark Site Bundle, `nutanix_compatibility.tgz`, `nutanix_compatibility.tgz.sign`, and `objects-1.1.tar.gz` from the Portal. Today, these are downloadable without auth:
