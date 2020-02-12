@@ -113,7 +113,7 @@ curl -k -X POST -d '{"value":"{\".oid\":\"LifeCycleManager\",\".method\":\"lcm_f
 
 We need to give LCM the plan to update MSP to 1.0.4 and Objects Controller to 1.1
 
-### Get UUIDs for Objects Controller and MSP
+**Get UUIDs for Objects Controller and MSP**
 
 ```
 ossUUID=`curl --max-time 25 --silent --header Content-Type:application/json --header Accept:application/json --insecure --user admin:'$PCPASS' -X POST -d '{"entity_type": "lcm_entity_v2","group_member_count": 500,"group_member_attributes": [{"attribute": "id"}, {"attribute": "uuid"}, {"attribute": "entity_model"}, {"attribute": "version"}, {"attribute": "location_id"}, {"attribute": "entity_class"}, {"attribute": "description"}, {"attribute": "last_updated_time_usecs"}, {"attribute": "request_version"}, {"attribute": "_master_cluster_uuid_"}, {"attribute": "entity_type"}, {"attribute": "single_group_uuid"}],"query_name": "lcm:EntityGroupModel","grouping_attribute": "location_id","filter_criteria": "entity_model!=AOS;entity_model!=NCC;entity_model!=PC;_master_cluster_uuid_==[no_val]"}' https://$PCIP:9440/api/nutanix/v3/groups | jq '.group_results[0].entity_results[0].entity_id'`
@@ -131,7 +131,7 @@ prints: Objects Manager
 prints: MSP
 ```
 
-### Generate Plan for MSP and Objects Controller
+**Generate Plan for MSP and Objects Controller**
 
 _NOTE: Make sure $mspUUID and $ossUUID are passed into (or replaced in) the command below!_
 
@@ -145,7 +145,7 @@ The cluster will output something to the effect of:
 {"value":"{\".return\": {\"node:d834cd05-f2b8-4018-80a6-81ba32166c84\": [\"Genesis service will be restarted on the cluster. User workloads will not be disrupted. Refer to KB 6945 for more details.\", \"\"]}}"}
 ```
 
-### Apply Plan for MSP and Objects Controller
+**Apply Plan for MSP and Objects Controller**
 
 _NOTE: Make sure $mspUUID and $ossUUID are passed into (or replaced in) the command below!_
 
