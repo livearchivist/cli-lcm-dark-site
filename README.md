@@ -8,7 +8,7 @@ Let me know if you have any questions!
 
 ## Enable Dark Site Mode and Update MSP and Objects
 
-1. Download the LCM Dark Site Bundle, `nutanix_compatibility.tgz`, `nutanix_compatibility.tgz.sign`, and `objects-1.1.tar.gz` from the Portal. Today, these are downloadable without auth:
+1. Download the LCM Dark Site Bundle, `nutanix_compatibility.tgz`, `nutanix_compatibility.tgz.sign`, and `objects-2.0.tar.gz` from the Portal. Today, these are downloadable without auth:
 
 ```
 cd /tmp
