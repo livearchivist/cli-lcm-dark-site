@@ -12,8 +12,8 @@ Let me know if you have any questions!
 
 ```
 cd /tmp
-wget http://download.nutanix.com/lcm/2.3.0.2/lcm_dark_site_bundle_2.3.0.2.13853.tar.gz
-wget http://download.nutanix.com/NutanixObjects/1.1/objects-1.1.tar.gz
+wget http://download.nutanix.com/lcm/null/lcm-2.3.1.15403/lcm_dark_site_bundle_2.3.1.15403.tar.gz
+wget http://download.nutanix.com/NutanixObjects/2.0/objects-2.0.tar.gz
 wget http://download.nutanix.com/lcm/2.0/nutanix_compatibility.tgz
 wget http://download.nutanix.com/lcm/2.0/nutanix_compatibility.tgz.sign
 ```
@@ -33,11 +33,11 @@ _Note:_ You may have to make some configuration changes to the Web Server's fire
 ```
 mkdir release
 cd release
-cp /tmp/lcm_dark_site_bundle_2.3.0.2.13853.tar.gz .
-tar -xvf lcm_dark_site_bundle_2.3.0.2.13853.tar.gz
+cp /tmp/lcm_dark_site_bundle_2.3.1.15403.tar.gz .
+tar -xvf lcm_dark_site_bundle_2.3.1.15403.tar.gz
 yes | cp -r /tmp/nutanix_compatibility* . # This will overwrite the nutanix_compatibility files from the lcm_dark_site_bundle
-cp /tmp/objects-1.1.tar.gz .
-tar -xvf objects-1.1.tar.gz
+cp /tmp/objects-2.0.tar.gz .
+tar -xvf objects-2.0.tar.gz
 ```
 
 4. Validate web directory structure looks like this:
@@ -48,13 +48,13 @@ tar -xvf objects-1.1.tar.gz
 /usr/share/nginx/html
 └── release
     ├── builds
-    ├── lcm_dark_site_bundle_2.3.0.2.13853.tar.gz
+    ├── lcm_dark_site_bundle_2.3.1.15403.tar.gz
     ├── master_manifest.tgz
     ├── master_manifest.tgz.sign
     ├── modules
     ├── nutanix_compatibility.tgz
     ├── nutanix_compatibility.tgz.sign
-    ├── objects-1.1.tar.gz
+    ├── objects-2.0.tar.gz
     ├── support.csv
     └── support.md
 ```
@@ -83,7 +83,7 @@ curl -k -X POST -d '{"state": "ENABLE"}'  -H 'Content-Type: application/json' ht
 
 6. Validate MSP Version
 
-Ensure MSP is on version 1.0.3 or higher
+Ensure MSP is on version 1.0.5 or higher
 
 ```
 admin@pcvm$ mspctl controller_version
